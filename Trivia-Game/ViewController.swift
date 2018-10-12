@@ -28,17 +28,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
+    @IBOutlet weak var photoPlaceholder: UIImageView!
+    
     var currentQuestion: TriviaQuestion!
+        
+        
     {
         didSet {
             // Property Observer for currentQuestion
             triviaGameQuestionLabel.text = currentQuestion.question
+            if let image = currentQuestion.photo {
+                photoPlaceholder.image = image
+            }
             answer1Button.setTitle(currentQuestion.answers[0], for: .normal)
             answer2Button.setTitle(currentQuestion.answers[1], for: .normal)
             answer3Button.setTitle(currentQuestion.answers[2], for: .normal)
             answer4Button.setTitle(currentQuestion.answers[3], for: .normal)
+            
         }
     }
+    
     
     var questions: [TriviaQuestion] = []
     
@@ -60,17 +69,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         populateQuestions()
         getNewQuestion()
+        
     }
     
     
     // This will be used to populate our question array when the app loads
     func populateQuestions() {
-        let question1 = TriviaQuestion(question: "What year did The Muppet Show premiere?", answers: ["1971", "1973", "1976", "1979"], correctAnswerIndex: 2)
-        let question2 = TriviaQuestion(question: "What Muppets song made it on to the pop music chart?", answers: ["Movin' Right Along", "Mah Na Mah Na", "Man or Muppet", "Rainbow Connection"], correctAnswerIndex: 3)
-        let question3 = TriviaQuestion(question: "What are the names of the two hecklers in the balcony?", answers: ["Statler and Waldorf", "Bert and Ernia", "Tim and Tom", "Bunsen and Beaker"], correctAnswerIndex: 0)
-        let question4 = TriviaQuestion(question: "What is the name of the Muppet house band?", answers: ["The What", "Huggy Bear and the Snuggles", "Dr. Teeth and the Electric Mayhem", "Swedish Chef"], correctAnswerIndex: 2)
-        let question5 = TriviaQuestion(question: "Who hosts The Muppet Show?", answers: ["Rowlf the Dog", "Kermit the Frog", "Miss Piggy", "Kermit the Frog"], correctAnswerIndex: 3)
-        questions = [question1, question2, question3, question4, question5]
+        let question1 = TriviaQuestion(question: "What year did The Muppet Show premiere?", answers: ["1971", "1973", "1976", "1979"], correctAnswerIndex: 2, photo: UIImage(named: "Image1.jpeg")!)
+        
+        let question2 = TriviaQuestion(question: "What Muppets song made it on to the pop music chart?", answers: ["Movin' Right Along", "Mah Na Mah Na", "Man or Muppet", "Rainbow Connection"], correctAnswerIndex: 3, photo: UIImage(named: "Image2.jpeg")!)
+        
+        let question3 = TriviaQuestion(question: "What are the names of the two hecklers in the balcony?", answers: ["Statler and Waldorf", "Bert and Ernia", "Tim and Tom", "Bunsen and Beaker"], correctAnswerIndex: 0, photo: UIImage(named: "Image3.jpeg")!)
+        
+        let question4 = TriviaQuestion(question: "What is the name of the Muppet house band?", answers: ["The What", "Huggy Bear and the Snuggles", "Dr. Teeth and the Electric Mayhem", "Swedish Chef"], correctAnswerIndex: 2, photo: UIImage(named: "Image4.jpeg")!)
+        
+        let question5 = TriviaQuestion(question: "Who hosts The Muppet Show?", answers: ["Rowlf the Dog", "Kermit the Frog", "Miss Piggy", "Kermit the Frog"], correctAnswerIndex: 3, photo: UIImage(named: "Image5.jpeg")!)
+        
+        let question6 = TriviaQuestion(question: "What is this Muppet's name?", answers: ["Fozzie", "Pepe", "Rizzo", "Walter"], correctAnswerIndex: 1, photo: UIImage(named: "Image6.jpeg")!)
+        
+        
+        
+        questions = [question1, question2, question3, question4, question5, question6]
     }
     
     
@@ -135,6 +154,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let incorrectAlert = UIAlertController(title: "Incorrect", message: "\(currentQuestion.correctAnswer) was the correct answer.", preferredStyle: .actionSheet)
         // UIAlertAction
         let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
+            self.questionsPlaceholder.append(self.questions.remove(at: self.randomIndex))
             self.getNewQuestion()
         }
         
@@ -170,10 +190,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     {
         if currentQuestion.correctAnswerIndex == sender.tag {
             // They got the question right, so we need to let them know
-            let correctAnswerAlertController = UIAlertController(title: "You got it right!", message: "Great job!", preferredStyle: .actionSheet)
-            let dismissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
-            correctAnswerAlertController.addAction(dismissAction)
-            self.present(correctAnswerAlertController, animated: true, completion: nil)
             showCorrectAnswerAlert()
             score += 1
             

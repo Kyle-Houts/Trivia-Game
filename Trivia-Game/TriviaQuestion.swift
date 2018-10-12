@@ -6,7 +6,7 @@
 //  Copyright © 2018 Kyle Houts. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 class TriviaQuestion {
@@ -25,11 +25,15 @@ class TriviaQuestion {
         return answers[correctAnswerIndex]
     }
     
+    // Photo placeholder
+    var photo: UIImage?
+    
     // Initializer for the TriviaQuestion class
-        init(question: String, answers: [String], correctAnswerIndex: Int){
+    init(question: String, answers: [String], correctAnswerIndex: Int, photo: UIImage?){
         self.question = question
         self.answers = answers
         self.correctAnswerIndex = correctAnswerIndex
+        self.photo = photo
         
     }
     

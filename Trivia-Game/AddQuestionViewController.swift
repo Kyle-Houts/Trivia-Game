@@ -76,7 +76,7 @@ class AddQuestionViewController: UIViewController {
         
         
         let newQuestion = TriviaQuestion(question: question, answers: [answer1, answer2, answer3, answer4],
-            correctAnswerIndex: correctAnswerSegmentedControl.selectedSegmentIndex)
+                                         correctAnswerIndex: correctAnswerSegmentedControl.selectedSegmentIndex, photo: nil)
         
         
         self.performSegue(withIdentifier: "unwindToQuizScreen", sender: self)
