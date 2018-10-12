@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1501.5999999999999" y="-564.46776611694156"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Question View Controller-->
         <scene sceneID="MVY-gy-8D5">
             <objects>
-                <viewController id="pRL-d8-HtX" sceneMemberID="viewController">
+                <viewController id="pRL-d8-HtX" customClass="AddQuestionViewController" customModule="Trivia_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3CO-Sm-3mh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,6 +161,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is the question?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4A-sy-LDd">
+                                <rect key="frame" x="20" y="196.5" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer #1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpv-jW-wDL">
                                 <rect key="frame" x="16" y="310" width="339" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -205,14 +211,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is the question?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4A-sy-LDd">
-                                <rect key="frame" x="20" y="158" width="335" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Gy-AS-AF2" firstAttribute="leading" secondItem="Sa5-LL-gS7" secondAttribute="leading" constant="20" id="9wi-Yb-NgC"/>
                             <constraint firstItem="Sa5-LL-gS7" firstAttribute="trailing" secondItem="i4A-sy-LDd" secondAttribute="trailing" constant="20" id="Bnh-sq-K5t"/>
@@ -220,13 +220,32 @@
                             <constraint firstItem="Sa5-LL-gS7" firstAttribute="trailing" secondItem="fVj-6f-di4" secondAttribute="trailing" id="FYW-R5-Zdh"/>
                             <constraint firstItem="6Gy-AS-AF2" firstAttribute="top" secondItem="Sa5-LL-gS7" secondAttribute="top" id="LRO-59-ryN"/>
                             <constraint firstItem="Sa5-LL-gS7" firstAttribute="trailing" secondItem="6Gy-AS-AF2" secondAttribute="trailing" constant="20" id="heu-Y8-hmi"/>
+                            <constraint firstItem="i4A-sy-LDd" firstAttribute="top" secondItem="6Gy-AS-AF2" secondAttribute="bottom" constant="60" id="r0A-8Z-adv"/>
+                            <constraint firstItem="i4A-sy-LDd" firstAttribute="leading" secondItem="Sa5-LL-gS7" secondAttribute="leading" constant="20" id="vCK-R4-fIJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Sa5-LL-gS7"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yKQ-QI-304">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="qvJ-jc-tQW">
+                            <connections>
+                                <action selector="submitButtonTapped:" destination="pRL-d8-HtX" id="X8E-qo-Ql1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answer1TextField" destination="zpv-jW-wDL" id="qzg-vL-12f"/>
+                        <outlet property="answer2TextField" destination="uws-dn-qXO" id="9JU-ub-XCK"/>
+                        <outlet property="answer3TextField" destination="6uO-59-RsN" id="ogh-qH-D8H"/>
+                        <outlet property="answer4TextField" destination="ZgG-dV-ldF" id="Gg7-u7-ZKy"/>
+                        <outlet property="correctAnswerSegmentedControl" destination="Wiw-Kc-39f" id="Vcz-Fd-5be"/>
+                        <outlet property="questionTextField" destination="i4A-sy-LDd" id="Bhn-jG-VeA"/>
+                        <segue destination="W8e-kb-c45" kind="unwind" identifier="undwindToQuizSegue" unwindAction="unwindToQuizScreenWithSegue:" id="eiq-fF-6Ax"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ng-s7-yhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="W8e-kb-c45" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="-564"/>
+            <point key="canvasLocation" x="2332" y="-564.46776611694156"/>
         </scene>
         <!--Item-->
         <scene sceneID="fxp-Hr-Ivj">

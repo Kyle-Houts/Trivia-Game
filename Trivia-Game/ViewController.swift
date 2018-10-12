@@ -65,13 +65,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // This will be used to populate our question array when the app loads
     func populateQuestions() {
-        let question1 = TriviaQuestion(question: "וואס  ", answers: ["Timmy", "Don", "Tobin", "Squee"], correctAnswerIndex: 2)
-        let question2 = TriviaQuestion(question: "Hi", answers: ["one", "two", "three", "four"], correctAnswerIndex: 1)
-        let question3 = TriviaQuestion(question: "Example", answers: ["do", "ray", "mi", "fa"], correctAnswerIndex: 1)
-        let question4 = TriviaQuestion(question: "Ugh", answers: ["one day", "i will", "learn how", "to do this"], correctAnswerIndex: 3)
-        let question5 = TriviaQuestion(question: "blue", answers: ["green", "red", "yellow", "purple"], correctAnswerIndex: 0)
+        let question1 = TriviaQuestion(question: "What year did The Muppet Show premiere?", answers: ["1971", "1973", "1976", "1979"], correctAnswerIndex: 2)
+        let question2 = TriviaQuestion(question: "What Muppets song made it on to the pop music chart?", answers: ["Movin' Right Along", "Mah Na Mah Na", "Man or Muppet", "Rainbow Connection"], correctAnswerIndex: 3)
+        let question3 = TriviaQuestion(question: "What are the names of the two hecklers in the balcony?", answers: ["Statler and Waldorf", "Bert and Ernia", "Tim and Tom", "Bunsen and Beaker"], correctAnswerIndex: 0)
+        let question4 = TriviaQuestion(question: "What is the name of the Muppet house band?", answers: ["The What", "Huggy Bear and the Snuggles", "Dr. Teeth and the Electric Mayhem", "Swedish Chef"], correctAnswerIndex: 2)
+        let question5 = TriviaQuestion(question: "Who hosts The Muppet Show?", answers: ["Rowlf the Dog", "Kermit the Frog", "Miss Piggy", "Kermit the Frog"], correctAnswerIndex: 3)
         questions = [question1, question2, question3, question4, question5]
     }
+    
+    
     
     // This function will be used to get a random question from our array of questions
     func getNewQuestion() {
@@ -83,9 +85,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             // If there are no question left, reset the game
             showGameOverAlert()
-            
         }
     }
+    
     
     
     func resetGame() {
@@ -187,6 +189,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         resetGame()
     }
     
+    
+    // Unwind segue to this screen
+    @IBAction func unwindToQuizScreen(segue: UIStoryboardSegue) { }
     
     
     

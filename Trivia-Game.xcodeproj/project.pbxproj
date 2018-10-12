@@ -13,6 +13,7 @@
 		C4241E22216CE14100C9534A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4241E21216CE14100C9534A /* Assets.xcassets */; };
 		C4241E25216CE14100C9534A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4241E23216CE14100C9534A /* LaunchScreen.storyboard */; };
 		C4241E2D216CE9F400C9534A /* TriviaQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4241E2C216CE9F400C9534A /* TriviaQuestion.swift */; };
+		C486D5DD216FC64400E2A2D1 /* AddQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C486D5DC216FC64400E2A2D1 /* AddQuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C4241E24216CE14100C9534A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4241E26216CE14100C9534A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4241E2C216CE9F400C9534A /* TriviaQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestion.swift; sourceTree = "<group>"; };
+		C486D5DC216FC64400E2A2D1 /* AddQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				C4241E23216CE14100C9534A /* LaunchScreen.storyboard */,
 				C4241E26216CE14100C9534A /* Info.plist */,
 				C4241E2C216CE9F400C9534A /* TriviaQuestion.swift */,
+				C486D5DC216FC64400E2A2D1 /* AddQuestionViewController.swift */,
 			);
 			path = "Trivia-Game";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				C4241E1D216CE13F00C9534A /* ViewController.swift in Sources */,
 				C4241E2D216CE9F400C9534A /* TriviaQuestion.swift in Sources */,
+				C486D5DD216FC64400E2A2D1 /* AddQuestionViewController.swift in Sources */,
 				C4241E1B216CE13F00C9534A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
