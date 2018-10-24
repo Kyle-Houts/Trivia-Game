@@ -26,7 +26,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-BK-iSB">
                                 <rect key="frame" x="0.0" y="276" width="240" height="30"/>
                                 <state key="normal" title="Answer #1">
-                                    <color key="titleColor" red="0.57206890769999996" green="0.2604511283" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.2238866994445036" green="0.057394518209284789" blue="0.5540600712435233" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aCW-Lt-NwS"/>
@@ -35,7 +35,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SC-h5-fLy">
                                 <rect key="frame" x="0.0" y="321" width="240" height="30"/>
                                 <state key="normal" title="Answer #2">
-                                    <color key="titleColor" red="0.57206890769999996" green="0.2604511283" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.2238866994" green="0.057394518210000002" blue="0.5540600712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFH-hF-Eat"/>
@@ -44,7 +44,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJq-9h-YD4">
                                 <rect key="frame" x="0.0" y="366" width="240" height="30"/>
                                 <state key="normal" title="Answer #3">
-                                    <color key="titleColor" red="0.57206890769999996" green="0.2604511283" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.2238866994" green="0.057394518210000002" blue="0.5540600712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggF-Wb-SOy"/>
@@ -53,7 +53,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mua-aO-Too">
                                 <rect key="frame" x="130" y="501" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Dk-xq-qaK">
@@ -65,13 +64,13 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCV-vb-Cw4">
                                 <rect key="frame" x="0.0" y="411" width="240" height="30"/>
                                 <state key="normal" title="Answer #4">
-                                    <color key="titleColor" red="0.57206890769999996" green="0.2604511283" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.2238866994" green="0.057394518210000002" blue="0.5540600712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b8M-4U-bBB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sV6-mT-ObR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sV6-mT-ObR">
                                 <rect key="frame" x="120" y="186" width="0.0" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="AYx-9o-LOH"/>
@@ -125,6 +124,7 @@
                         <outlet property="answer2Button" destination="3SC-h5-fLy" id="4A1-zI-sQ2"/>
                         <outlet property="answer3Button" destination="NJq-9h-YD4" id="YmD-hB-I2H"/>
                         <outlet property="answer4Button" destination="wCV-vb-Cw4" id="n8V-Zc-KMu"/>
+                        <outlet property="navigationBar" destination="WcW-Bm-vq8" id="x61-TX-Fkz"/>
                         <outlet property="photoPlaceholder" destination="sV6-mT-ObR" id="NEI-LA-nJS"/>
                         <outlet property="resetButton" destination="nt7-cu-YKw" id="nLn-Ky-d1k"/>
                         <outlet property="triviaGameQuestionLabel" destination="gdK-ho-aHh" id="2o0-we-6EU"/>

@@ -26,7 +26,6 @@ class AddQuestionViewController: UIViewController {
     @IBOutlet weak var answer2TextField: UITextField!
     
     @IBOutlet weak var answer3TextField: UITextField!
-    
 
     @IBOutlet weak var answer4TextField: UITextField!
     

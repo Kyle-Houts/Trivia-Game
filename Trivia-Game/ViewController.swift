@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var answer1Button: UIButton!
     
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    
     @IBOutlet weak var answer2Button: UIButton!
     
     @IBOutlet weak var answer3Button: UIButton!
@@ -30,10 +32,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var photoPlaceholder: UIImageView!
     
-    var currentQuestion: TriviaQuestion!
-        
-        
-    {
+//    navigationBar.appearance().barTintColor = UIColor.blue
+    
+    var currentQuestion: TriviaQuestion! {
         didSet {
             // Property Observer for currentQuestion
             triviaGameQuestionLabel.text = currentQuestion.question
@@ -47,7 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
-    
+
     
     var questions: [TriviaQuestion] = []
     
@@ -83,13 +84,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let question4 = TriviaQuestion(question: "What is the name of the Muppet house band?", answers: ["The What", "Huggy Bear and the Snuggles", "Dr. Teeth and the Electric Mayhem", "Swedish Chef"], correctAnswerIndex: 2, photo: UIImage(named: "Image4.jpeg")!)
         
-        let question5 = TriviaQuestion(question: "Who hosts The Muppet Show?", answers: ["Rowlf the Dog", "Kermit the Frog", "Miss Piggy", "Kermit the Frog"], correctAnswerIndex: 3, photo: UIImage(named: "Image5.jpeg")!)
+        let question5 = TriviaQuestion(question: "Who hosts The Muppet Show?", answers: ["Rowlf the Dog", "Fozzie Bear", "Miss Piggy", "Kermit the Frog"], correctAnswerIndex: 3, photo: UIImage(named: "Image5.jpeg")!)
         
         let question6 = TriviaQuestion(question: "What is this Muppet's name?", answers: ["Fozzie", "Pepe", "Rizzo", "Walter"], correctAnswerIndex: 1, photo: UIImage(named: "Image6.jpeg")!)
         
+        let question7 = TriviaQuestion(question: "What is the name of the largest Muppet?", answers: ["Thog", "Scooter", "Beauregard", "Marvin"], correctAnswerIndex: 0, photo: UIImage(named: "Image7.jpeg"))
+        
+        let question8 = TriviaQuestion(question: "What instrument does Janice play?", answers: ["Tamborine", "Piano", "Drums", "Guitar"], correctAnswerIndex: 3, photo: UIImage(named: "Image8.jpeg"))
         
         
-        questions = [question1, question2, question3, question4, question5, question6]
+        let question9 = TriviaQuestion(question: "Who is the creator of the Muppets?", answers: ["Walt Disney", "Steven Spielberg", "Jim Henson", "Hayoa Miyazaki"], correctAnswerIndex: 2, photo: UIImage(named: "Image9.jpeg"))
+        
+
+        
+        
+        questions = [question1, question2, question3, question4, question5, question6, question7, question8, question9]
     }
     
     
@@ -192,11 +201,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // They got the question right, so we need to let them know
             showCorrectAnswerAlert()
             score += 1
+            if score > 0 {
+                userScoreNumberLabel.textColor = UIColor.green
+            } else if score < 0 {
+                userScoreNumberLabel.textColor = UIColor.red
+            } else {
+                userScoreNumberLabel.textColor = UIColor.black
+            }
+     
+        
             
         } else {
             // They got the question wrong, so we need to let them know
             showIncorrectAnswerAlert()
             score -= 1
+            if score > 0 {
+                userScoreNumberLabel.textColor = UIColor.green
+            } else if score < 0 {
+                userScoreNumberLabel.textColor = UIColor.red
+            } else {
+                userScoreNumberLabel.textColor = UIColor.black
+            }
         }
     }
     
